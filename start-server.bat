@@ -1,0 +1,9 @@
+@echo off
+cd /d "C:\Users\RD JUNIOR\Desktop\GESTÃO SHARKS COMPANY\2- SHARKS COMPANY\DEV\ORÇAMENTO ESTRATEGICO"
+echo Starting server...
+start /B npm run dev > server.log 2>&1
+echo Waiting for server...
+timeout /t 10 /nobreak > nul
+echo Opening browser...
+start http://localhost:8081
+echo Done!

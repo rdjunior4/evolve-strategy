@@ -1,9 +1,7 @@
-import { useReveal } from "@/hooks/use-reveal";
 import type { ReactNode } from "react";
 
 interface SectionProps {
   id: string;
-  index: string;
   eyebrow?: string;
   title: ReactNode;
   subtitle?: ReactNode;
@@ -13,27 +11,25 @@ interface SectionProps {
 
 export function Section({
   id,
-  index,
   eyebrow,
   title,
   subtitle,
   children,
   className = "",
 }: SectionProps) {
-  const { ref, className: revealCls } = useReveal<HTMLDivElement>();
   return (
     <section
       id={id}
-      className={`relative scroll-mt-24 px-5 py-24 md:px-8 md:py-32 ${className}`}
+      className={`relative scroll-mt-24 px-5 py-20 md:px-8 md:py-28 ${className}`}
     >
       <div className="mx-auto max-w-6xl">
-        <div ref={ref} className={revealCls}>
-          <div className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground">
-            <span className="text-brand">{index}</span>
-            <span className="h-px w-8 bg-border" />
-            {eyebrow && <span>{eyebrow}</span>}
-          </div>
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <div className="mb-8 md:mb-12">
+          {eyebrow && (
+            <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-brand">
+              {eyebrow}
+            </span>
+          )}
+          <h2 className="text-pretty text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
             {title}
           </h2>
           {subtitle && (
@@ -42,7 +38,7 @@ export function Section({
             </p>
           )}
         </div>
-        <div className="mt-12 md:mt-16">{children}</div>
+        <div>{children}</div>
       </div>
     </section>
   );
