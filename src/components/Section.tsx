@@ -23,7 +23,7 @@ export function Section({
       className={`relative scroll-mt-24 px-5 py-20 md:px-8 md:py-28 ${className}`}
     >
       <div className="mx-auto max-w-6xl">
-        <div className="mb-8 md:mb-12">
+        <div className="mb-10 flex flex-col items-center text-center md:mb-16">
           {eyebrow && (
             <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-brand">
               {eyebrow}

@@ -16,6 +16,7 @@ import {
   MapPin,
   Megaphone,
   MessageSquare,
+  Minus,
   Palette,
   Rocket,
   Share2,
@@ -62,6 +63,8 @@ function Index() {
         <Hero />
         <Pilares />
         <Metodo />
+        <FunilEcommerce />
+        <Investimento />
         <Beneficios />
         <Diferenciais />
         <CTA />
@@ -102,14 +105,16 @@ function Hero() {
         {/* Title */}
         <h1 className="text-balance text-center text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-6xl lg:text-7xl">
           Evolução de{" "}
-          <span className="text-brand-gradient">Planejamento</span>
+          <span className="text-brand-gradient pb-2 inline-block">Planejamento</span>
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground md:text-lg">
           Marketing Estratégico, Tecnologia e automação para fortalecer a marca,
           apoiar o comercial e impulsionar o crescimento da{" "}
-          <span className="font-medium text-foreground">PB &amp; RN Foods Distribuidora</span>.
+          <span className="inline-flex items-center align-middle">
+            <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-6 md:h-7 w-auto object-contain" />
+          </span>.
         </p>
 
         {/* CTA Buttons */}
@@ -286,10 +291,11 @@ function Beneficios() {
       id="beneficios"
       eyebrow="Benefícios"
       title={
-        <>
-          O que a PB &amp; RN Foods{" "}
-          <span className="text-brand-gradient">ganha com a evolução</span>
-        </>
+        <span className="flex flex-col md:flex-row items-center justify-center gap-3 pb-2">
+          O que a
+          <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-10 md:h-12 w-auto object-contain" />
+          <span className="text-brand-gradient pb-2">ganha com a evolução</span>
+        </span>
       }
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -325,13 +331,21 @@ function Diferenciais() {
           <span className="text-brand-gradient">próximo estágio</span>
         </>
       }
-      subtitle="A Sharks Company passa a atuar como parceira estratégica da PB & RN Foods Distribuidora, conectando marketing, tecnologia, comunicação e relacionamento para apoiar o crescimento."
+      subtitle={
+        <span className="inline-block">
+          A Sharks Company passa a atuar como parceira estratégica da{" "}
+          <span className="inline-flex items-center align-middle">
+            <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-5 md:h-6 w-auto object-contain mx-1" />
+          </span>
+          , conectando marketing, tecnologia, comunicação e relacionamento para apoiar o crescimento.
+        </span>
+      }
     >
       <div className="rounded-[2rem] border border-brand/30 bg-surface/40 p-10 text-center md:p-16">
-        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-brand text-primary-foreground shadow-glow">
-          <Sparkles className="h-7 w-7" />
+        <div className="mx-auto mb-6 flex justify-center drop-shadow-lg">
+          <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-14 md:h-16 w-auto object-contain" />
         </div>
-        <p className="mx-auto max-w-3xl text-pretty text-2xl font-semibold leading-snug text-foreground md:text-4xl">
+        <p className="mx-auto max-w-3xl text-pretty text-xl font-medium leading-relaxed text-foreground md:text-2xl lg:text-3xl">
           A PB &amp; RN Foods não precisa apenas comunicar melhor. Precisa{" "}
           <span className="text-brand-gradient">
             transformar o marketing em uma ferramenta de crescimento
@@ -392,5 +406,171 @@ function CTA() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Investimento() {
+  return (
+    <Section
+      id="investimento"
+      eyebrow="Comparativo de Cenários"
+      title={
+        <>
+          O que muda no <span className="text-brand-gradient">Investimento</span>
+        </>
+      }
+      subtitle="Uma visão clara do escopo entregue atualmente versus a nova estrutura estratégica planejada para o crescimento da operação."
+    >
+      <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-border bg-surface/30 shadow-2xl backdrop-blur">
+        {/* Table Header */}
+        <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-border bg-surface/50">
+          <div className="p-3 md:p-6"></div>
+          <div className="border-l border-border p-3 text-center md:p-6">
+            <h3 className="text-[10px] md:text-lg font-semibold leading-tight text-muted-foreground">Contrato Atual</h3>
+          </div>
+          <div className="relative border-l border-border bg-brand/5 p-3 text-center md:p-6">
+            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-brand" />
+            <h3 className="text-xs md:text-xl font-bold leading-tight text-brand">Evolução Sharks</h3>
+          </div>
+        </div>
+
+        {/* Table Body */}
+        <div className="divide-y divide-border/50">
+          {/* Row 1 */}
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] transition-colors hover:bg-surface/40">
+            <div className="flex items-center p-4 md:p-6">
+              <span className="text-[11px] md:text-sm font-medium text-foreground">Marketing Digital (Gestão de Redes/Tráfego)</span>
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 p-3 md:p-6">
+              <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-muted-foreground" />
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 bg-brand/5 p-3 md:p-6">
+              <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-brand drop-shadow-[0_0_8px_rgba(100,180,255,0.5)]" />
+            </div>
+          </div>
+
+          {/* Row 2 */}
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] transition-colors hover:bg-surface/40">
+            <div className="flex items-center p-4 md:p-6">
+              <span className="text-[11px] md:text-sm font-medium text-foreground">Plano Completo de Marketing Estratégico</span>
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 p-3 md:p-6">
+              <Minus className="h-4 w-4 md:h-5 md:w-5 text-border" />
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 bg-brand/5 p-3 md:p-6">
+              <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-brand drop-shadow-[0_0_8px_rgba(100,180,255,0.5)]" />
+            </div>
+          </div>
+
+          {/* Row 3 */}
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] transition-colors hover:bg-surface/40">
+            <div className="flex items-center p-4 md:p-6">
+              <span className="text-[11px] md:text-sm font-medium text-foreground">Sistema de Comunicação Interna</span>
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 p-3 md:p-6">
+              <Minus className="h-4 w-4 md:h-5 md:w-5 text-border" />
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 bg-brand/5 p-3 md:p-6">
+              <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-brand drop-shadow-[0_0_8px_rgba(100,180,255,0.5)]" />
+            </div>
+          </div>
+
+          {/* Row 4 */}
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] transition-colors hover:bg-surface/40">
+            <div className="flex items-center p-4 md:p-6">
+              <span className="text-[11px] md:text-sm font-medium text-foreground">Funil de E-commerce e Delivery</span>
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 p-3 md:p-6">
+              <Minus className="h-4 w-4 md:h-5 md:w-5 text-border" />
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 bg-brand/5 p-3 md:p-6">
+              <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-brand drop-shadow-[0_0_8px_rgba(100,180,255,0.5)]" />
+            </div>
+          </div>
+
+          {/* Row 5 */}
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] transition-colors hover:bg-surface/40">
+            <div className="flex items-center p-4 md:p-6">
+              <span className="text-[11px] md:text-sm font-medium text-foreground">Automações de Atendimento e Marketing</span>
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 p-3 md:p-6">
+              <Minus className="h-4 w-4 md:h-5 md:w-5 text-border" />
+            </div>
+            <div className="flex items-center justify-center border-l border-border/50 bg-brand/5 p-3 md:p-6">
+              <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-brand drop-shadow-[0_0_8px_rgba(100,180,255,0.5)]" />
+            </div>
+          </div>
+
+          {/* Values Row */}
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] bg-surface/60">
+            <div className="flex items-center p-4 md:justify-center md:p-8">
+              <span className="text-[13px] md:text-lg font-bold text-foreground">Investimento Financeiro</span>
+            </div>
+            <div className="border-l border-border p-3 text-center md:p-8">
+              <div className="mb-1 text-[10px] md:text-sm font-medium text-muted-foreground">Por Empresa</div>
+              <div className="mb-2 md:mb-5 text-sm md:text-2xl font-bold tracking-tight text-foreground lg:text-3xl">R$ 1.100<span className="text-[10px] md:text-lg text-muted-foreground lg:text-xl">,00</span></div>
+              
+              <div className="hidden md:block mb-1 text-[11px] font-bold uppercase tracking-wider text-muted-foreground/70">Valor Total (Duas Empresas)</div>
+              <div className="hidden md:block text-lg font-bold text-muted-foreground lg:text-xl">R$ 2.200,00</div>
+              
+              {/* Mobile total */}
+              <div className="block md:hidden border-t border-border/50 pt-2 mt-2">
+                <div className="text-[8px] font-bold uppercase text-muted-foreground/70">Total (2 Emp.)</div>
+                <div className="text-xs font-bold text-muted-foreground">R$ 2.200,00</div>
+              </div>
+            </div>
+            <div className="relative overflow-hidden border-l border-border bg-brand/10 p-3 text-center md:p-8">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand/5 to-transparent" />
+              <div className="relative z-10">
+                <div className="mb-1 text-[10px] md:text-sm font-bold text-brand">Por Empresa</div>
+                <div className="mb-2 md:mb-5 text-base md:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">R$ 2.650<span className="text-[10px] md:text-xl text-muted-foreground/80 lg:text-2xl">,00</span></div>
+                
+                <div className="hidden md:block mb-1 text-[11px] font-bold uppercase tracking-wider text-brand/80">Valor Total (Duas Empresas)</div>
+                <div className="hidden md:block text-xl font-black text-brand-glow lg:text-2xl">R$ 5.300,00</div>
+
+                {/* Mobile total */}
+                <div className="block md:hidden border-t border-brand/20 pt-2 mt-2">
+                  <div className="text-[8px] font-bold uppercase text-brand/80">Total (2 Emp.)</div>
+                  <div className="text-sm font-black text-brand-glow">R$ 5.300,00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function FunilEcommerce() {
+  return (
+    <Section
+      id="funil-ecommerce"
+      eyebrow="Ação Estratégica"
+      title={
+        <>
+          Funil de <span className="text-brand-gradient pb-2 inline-block">E-commerce e Delivery</span>
+        </>
+      }
+      subtitle="Estratégia desenhada para aquisição, retenção e conversão contínua em canais de vendas diretas."
+    >
+      <div className="mx-auto mt-4 overflow-hidden rounded-xl border border-border bg-surface/50 shadow-[0_0_50px_rgba(100,180,255,0.1)] backdrop-blur transition-transform hover:scale-[1.01] md:rounded-2xl lg:max-w-5xl">
+        {/* Mockup Header (macOS style window) */}
+        <div className="flex items-center border-b border-border bg-surface/80 px-4 py-3 backdrop-blur">
+          <div className="flex gap-2">
+            <div className="h-3 w-3 rounded-full bg-[#FF5F56] opacity-80" />
+            <div className="h-3 w-3 rounded-full bg-[#FFBD2E] opacity-80" />
+            <div className="h-3 w-3 rounded-full bg-[#27C93F] opacity-80" />
+          </div>
+        </div>
+        
+        {/* Image Content */}
+        <img
+          src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-20_00_53.png"
+          alt="Funil de E-commerce e Delivery"
+          className="w-full object-cover"
+        />
+      </div>
+    </Section>
   );
 }
