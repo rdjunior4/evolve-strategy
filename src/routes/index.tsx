@@ -57,6 +57,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  // Renderização da Proposta Comercial e Planejamento Estratégico
   return (
     <div className="min-h-screen text-foreground">
       <main>
