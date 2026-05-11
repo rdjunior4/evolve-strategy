@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { AnimateOnScroll } from "./AnimateOnScroll";
 
 interface SectionProps {
   id: string;
@@ -25,17 +26,23 @@ export function Section({
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-col items-center text-center md:mb-16">
           {eyebrow && (
-            <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-brand">
-              {eyebrow}
-            </span>
+            <AnimateOnScroll variant="fadeDown" delay={0}>
+              <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-brand">
+                {eyebrow}
+              </span>
+            </AnimateOnScroll>
           )}
-          <h2 className="text-pretty text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
-            {title}
-          </h2>
+          <AnimateOnScroll variant="fadeUp" delay={0.1}>
+            <h2 className="text-pretty text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+              {title}
+            </h2>
+          </AnimateOnScroll>
           {subtitle && (
-            <p className="mt-5 max-w-3xl text-pretty text-base text-muted-foreground md:text-lg">
-              {subtitle}
-            </p>
+            <AnimateOnScroll variant="fadeUp" delay={0.2}>
+              <p className="mt-5 max-w-3xl text-pretty text-base text-muted-foreground md:text-lg">
+                {subtitle}
+              </p>
+            </AnimateOnScroll>
           )}
         </div>
         <div>{children}</div>

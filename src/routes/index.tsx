@@ -32,6 +32,7 @@ import {
 import { Section } from "@/components/Section";
 import { SharksLogo } from "@/components/SharksLogo";
 import { SharkFinDivider } from "@/components/SharkFinDivider";
+import { AnimateOnScroll, StaggerChildren, StaggerItem } from "@/components/AnimateOnScroll";
 import type { LucideIcon } from "lucide-react";
 
 const SHARKS_LOGO_URL =
@@ -98,50 +99,60 @@ function Hero() {
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center">
         {/* Logo */}
-        <div className="mb-8 animate-float">
-          <img
-            src={SHARKS_LOGO_URL}
-            alt="Sharks Company"
-            className="h-28 w-auto object-contain drop-shadow-[0_0_40px_rgba(100,180,255,0.3)] md:h-36"
-          />
-        </div>
+        <AnimateOnScroll variant="scaleIn" delay={0.1}>
+          <div className="mb-8 animate-float">
+            <img
+              src={SHARKS_LOGO_URL}
+              alt="Sharks Company"
+              className="h-28 w-auto object-contain drop-shadow-[0_0_40px_rgba(100,180,255,0.3)] md:h-36"
+            />
+          </div>
+        </AnimateOnScroll>
 
         {/* Eyebrow */}
-        <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand/40 bg-surface/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brand backdrop-blur">
-          Proposta Comercial · 2026
-        </span>
+        <AnimateOnScroll variant="fadeDown" delay={0.3}>
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand/40 bg-surface/60 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brand backdrop-blur">
+            Proposta Comercial · 2026
+          </span>
+        </AnimateOnScroll>
 
         {/* Title */}
-        <h1 className="text-balance text-center text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-6xl lg:text-7xl">
-          Evolução de{" "}
-          <span className="text-brand-gradient pb-2 inline-block">Planejamento</span>
-        </h1>
+        <AnimateOnScroll variant="fadeUp" delay={0.5}>
+          <h1 className="text-balance text-center text-4xl font-semibold leading-[1.08] tracking-tight text-foreground md:text-6xl lg:text-7xl">
+            Evolução de{" "}
+            <span className="text-brand-gradient pb-2 inline-block">Planejamento</span>
+          </h1>
+        </AnimateOnScroll>
 
         {/* Subtitle */}
-        <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground md:text-lg">
-          Marketing Estratégico, Tecnologia e automação para fortalecer a marca,
-          apoiar o comercial e impulsionar o crescimento da{" "}
-          <span className="inline-flex items-center align-middle">
-            <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-6 md:h-7 w-auto object-contain" />
-          </span>.
-        </p>
+        <AnimateOnScroll variant="fadeUp" delay={0.7}>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-muted-foreground md:text-lg">
+            Marketing Estratégico, Tecnologia e automação para fortalecer a marca,
+            apoiar o comercial e impulsionar o crescimento da{" "}
+            <span className="inline-flex items-center align-middle">
+              <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-6 md:h-7 w-auto object-contain" />
+            </span>.
+          </p>
+        </AnimateOnScroll>
 
         {/* CTA Buttons */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#pilares"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90"
-          >
-            Ver proposta completa
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-          </a>
-          <a
-            href="#cta"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-surface"
-          >
-            Falar com Sharks
-          </a>
-        </div>
+        <AnimateOnScroll variant="fadeUp" delay={0.9}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#pilares"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90"
+            >
+              Ver proposta completa
+              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#cta"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-7 py-3.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-surface"
+            >
+              Falar com Sharks
+            </a>
+          </div>
+        </AnimateOnScroll>
 
       </div>
     </section>
@@ -182,23 +193,24 @@ function Pilares() {
       }
       subtitle="Cada seção do plano foi desenhada para cobrir todas as frentes necessárias ao crescimento estratégico da distribuidora."
     >
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <StaggerChildren className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.05}>
         {pilares.map(({ icon: Icon, title, text }, i) => (
-          <div
-            key={title}
-            className="group rounded-2xl border border-border bg-surface/40 p-5 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-brand/50 hover:bg-surface/60 hover:shadow-glow"
-          >
-            <div className="mb-3 flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand/15 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand/20">
-                <Icon className="h-5 w-5" />
+          <StaggerItem key={title}>
+            <div
+              className="group h-full rounded-2xl border border-border bg-surface/40 p-5 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-brand/50 hover:bg-surface/60 hover:shadow-glow"
+            >
+              <div className="mb-3 flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand/15 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand/20">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <span className="text-xs font-bold text-brand/60">{String(i + 1).padStart(2, "0")}</span>
               </div>
-              <span className="text-xs font-bold text-brand/60">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+              <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{text}</p>
             </div>
-            <h3 className="text-sm font-semibold text-foreground">{title}</h3>
-            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{text}</p>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerChildren>
     </Section>
   );
 }
@@ -238,25 +250,26 @@ function Metodo() {
       }
       subtitle="Nossa metodologia garante que cada etapa esteja conectada aos objetivos da distribuidora."
     >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <StaggerChildren className="grid gap-6 md:grid-cols-2 lg:grid-cols-4" staggerDelay={0.12}>
         {fases.map((f, i) => (
-          <div
-            key={f.n}
-            className="group relative rounded-2xl border border-border bg-surface/40 p-6 transition-all duration-300 ease-out hover:border-brand/30 hover:bg-surface/50"
-          >
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand/15 font-semibold text-brand transition-colors duration-300 group-hover:bg-brand/25">
-              {f.n}
+          <StaggerItem key={f.n}>
+            <div
+              className="group relative h-full rounded-2xl border border-border bg-surface/40 p-6 transition-all duration-300 ease-out hover:border-brand/30 hover:bg-surface/50"
+            >
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand/15 font-semibold text-brand transition-colors duration-300 group-hover:bg-brand/25">
+                {f.n}
+              </div>
+              <h3 className="text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-brand-glow">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {f.text}
+              </p>
+              {i < fases.length - 1 && (
+                <ChevronRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 lg:block" />
+              )}
             </div>
-            <h3 className="text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-brand-glow">{f.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {f.text}
-            </p>
-            {i < fases.length - 1 && (
-              <ChevronRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 lg:block" />
-            )}
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerChildren>
     </Section>
   );
 }
@@ -307,24 +320,25 @@ function Beneficios() {
         </span>
       }
     >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <StaggerChildren className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
         {items.map(({ icon: Icon, title, text }) => (
-          <div
-            key={title}
-            className="group flex items-start gap-4 rounded-2xl border border-border bg-surface/40 p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand/40 hover:bg-surface/60"
-          >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105">
-              <Icon className="h-6 w-6" />
+          <StaggerItem key={title}>
+            <div
+              className="group flex h-full items-start gap-4 rounded-2xl border border-border bg-surface/40 p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand/40 hover:bg-surface/60"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105">
+                <Icon className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-brand-glow">{title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {text}
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-brand-glow">{title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                {text}
-              </p>
-            </div>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerChildren>
     </Section>
   );
 }
@@ -350,18 +364,20 @@ function Diferenciais() {
         </span>
       }
     >
-      <div className="rounded-[2rem] border border-brand/30 bg-surface/40 p-10 text-center md:p-16">
-        <div className="mx-auto mb-6 flex justify-center drop-shadow-lg">
-          <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-14 md:h-16 w-auto object-contain" />
+      <AnimateOnScroll variant="scaleIn" delay={0.2}>
+        <div className="rounded-[2rem] border border-brand/30 bg-surface/40 p-10 text-center md:p-16">
+          <div className="mx-auto mb-6 flex justify-center drop-shadow-lg">
+            <img src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-8-de-mai.-de-2026-19_29_58-1-e1778280353107.png" alt="PB & RN Foods" className="h-14 md:h-16 w-auto object-contain" />
+          </div>
+          <p className="mx-auto max-w-3xl text-pretty text-xl font-medium leading-relaxed text-foreground md:text-2xl lg:text-3xl">
+            A PB &amp; RN Foods não precisa apenas comunicar melhor. Precisa{" "}
+            <span className="text-brand-gradient">
+              transformar o marketing em uma ferramenta de crescimento
+            </span>
+            , relacionamento e fortalecimento comercial.
+          </p>
         </div>
-        <p className="mx-auto max-w-3xl text-pretty text-xl font-medium leading-relaxed text-foreground md:text-2xl lg:text-3xl">
-          A PB &amp; RN Foods não precisa apenas comunicar melhor. Precisa{" "}
-          <span className="text-brand-gradient">
-            transformar o marketing em uma ferramenta de crescimento
-          </span>
-          , relacionamento e fortalecimento comercial.
-        </p>
-      </div>
+      </AnimateOnScroll>
     </Section>
   );
 }
@@ -376,43 +392,51 @@ function CTA() {
       <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/20 blur-[120px]" />
 
       <div className="relative mx-auto max-w-3xl text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/40 bg-surface/60 px-4 py-1.5 backdrop-blur">
-          <Rocket className="h-3.5 w-3.5 text-brand" />
-          <span className="text-xs font-medium tracking-wider text-foreground">
-            PRÓXIMO PASSO
-          </span>
-        </div>
+        <AnimateOnScroll variant="fadeDown" delay={0}>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/40 bg-surface/60 px-4 py-1.5 backdrop-blur">
+            <Rocket className="h-3.5 w-3.5 text-brand" />
+            <span className="text-xs font-medium tracking-wider text-foreground">
+              PRÓXIMO PASSO
+            </span>
+          </div>
+        </AnimateOnScroll>
 
-        <h2 className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-          A próxima fase do crescimento começa com{" "}
-          <span className="text-brand-gradient">marketing mais estratégico</span>.
-        </h2>
+        <AnimateOnScroll variant="fadeUp" delay={0.15}>
+          <h2 className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
+            A próxima fase do crescimento começa com{" "}
+            <span className="text-brand-gradient">marketing mais estratégico</span>.
+          </h2>
+        </AnimateOnScroll>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          A evolução do contrato cria uma base mais completa para fortalecer a marca,
-          apoiar vendas, organizar processos e impulsionar novas oportunidades
-          comerciais.
-        </p>
+        <AnimateOnScroll variant="fadeUp" delay={0.3}>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+            A evolução do contrato cria uma base mais completa para fortalecer a marca,
+            apoiar vendas, organizar processos e impulsionar novas oportunidades
+            comerciais.
+          </p>
+        </AnimateOnScroll>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="https://wa.me/5581989758872"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90"
-          >
-            Confirmar evolução do contrato
-            <ArrowRight className="h-4 w-4" />
-          </a>
-          <a
-            href="https://wa.me/5581989758872"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-8 py-4 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-surface"
-          >
-            Falar com Sharks Company
-          </a>
-        </div>
+        <AnimateOnScroll variant="fadeUp" delay={0.45}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://wa.me/5581989758872"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90"
+            >
+              Confirmar evolução do contrato
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="https://wa.me/5581989758872"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-8 py-4 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-surface"
+            >
+              Falar com Sharks Company
+            </a>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
@@ -430,6 +454,7 @@ function Investimento() {
       }
       subtitle="Uma visão clara do escopo entregue atualmente versus a nova estrutura estratégica planejada para o crescimento da operação."
     >
+      <AnimateOnScroll variant="fadeUp" delay={0.15}>
       <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-border bg-surface/30 shadow-2xl backdrop-blur">
         {/* Table Header */}
         <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-border bg-surface/50">
@@ -547,6 +572,7 @@ function Investimento() {
           </div>
         </div>
       </div>
+      </AnimateOnScroll>
     </Section>
   );
 }
@@ -563,6 +589,7 @@ function FunilEcommerce() {
       }
       subtitle="Estratégia desenhada para aquisição, retenção e conversão contínua em canais de vendas diretas."
     >
+      <AnimateOnScroll variant="scaleIn" delay={0.15}>
       <div className="mx-auto mt-4 overflow-hidden rounded-xl border border-border bg-surface/50 shadow-[0_0_50px_rgba(100,180,255,0.1)] backdrop-blur transition-transform hover:scale-[1.01] md:rounded-2xl lg:max-w-5xl">
         {/* Mockup Header (macOS style window) */}
         <div className="flex items-center border-b border-border bg-surface/80 px-4 py-3 backdrop-blur">
@@ -580,6 +607,7 @@ function FunilEcommerce() {
           className="w-full object-cover"
         />
       </div>
+      </AnimateOnScroll>
     </Section>
   );
 }
