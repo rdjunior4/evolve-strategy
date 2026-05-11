@@ -13,7 +13,9 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
     <div
       ref={ref}
       className={`relative z-20 w-full ${
-        large ? "h-[100px] sm:h-[140px] lg:h-[200px]" : "h-[80px] sm:h-[100px] lg:h-[140px]"
+        large
+          ? "h-[100px] sm:h-[140px] lg:h-[200px] -mt-[100px] sm:-mt-[140px] lg:-mt-[200px]"
+          : "h-[80px] sm:h-[100px] lg:h-[140px] -mt-[80px] sm:-mt-[100px] lg:-mt-[140px]"
       }`}
       aria-hidden="true"
     >
