@@ -87,7 +87,7 @@ function Hero() {
   return (
     <section
       id="capa"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 py-20 md:px-8"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pb-36 pt-20 md:px-8 md:pb-44"
     >
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">

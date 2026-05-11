@@ -12,7 +12,7 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
   const popupBaseDelay = duration + 0.8
 
   return (
-    <div className="relative z-20 w-full mt-16 sm:mt-20 lg:mt-24" aria-hidden="true">
+    <div className="relative z-20 w-full" aria-hidden="true">
       <div
         ref={ref}
         className={`pointer-events-none absolute bottom-0 left-0 right-0 translate-y-[28%] ${
