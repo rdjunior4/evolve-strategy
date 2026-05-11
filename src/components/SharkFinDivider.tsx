@@ -20,7 +20,7 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
       aria-hidden="true"
     >
       {/* Horizontal glowing line */}
-      <div className="absolute bottom-[28%] left-0 right-0 h-px">
+      <div className="absolute bottom-0 left-0 right-0 h-px">
         <div className="absolute inset-0 bg-white/[0.06]" />
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/90 to-transparent shadow-[0_0_15px_2px_rgba(59,130,246,0.5)]"
@@ -33,7 +33,7 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
 
       {/* Shark fin + effects container */}
       <motion.div
-        className="absolute bottom-[28%] left-1/2"
+        className="absolute bottom-0 left-1/2"
         initial={{ x: "50vw", opacity: 0 }}
         animate={
           shouldAnimate
