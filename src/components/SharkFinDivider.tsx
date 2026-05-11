@@ -1,6 +1,5 @@
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
-import { Crosshair, TrendingUp, DollarSign } from "lucide-react"
 
 export function SharkFinDivider({ large = false }: { large?: boolean }) {
   const ref = useRef(null)
@@ -13,7 +12,7 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
   const popupBaseDelay = duration + 0.8
 
   return (
-    <div className="relative z-20 w-full" aria-hidden="true">
+    <div className="relative z-20 w-full mt-16 sm:mt-20 lg:mt-24" aria-hidden="true">
       <div
         ref={ref}
         className={`pointer-events-none absolute bottom-0 left-0 right-0 translate-y-[28%] ${
@@ -125,105 +124,7 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
             />
           </motion.div>
 
-          {large && (
-            <>
-              <motion.div
-                className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-md border border-blue-400/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(59,130,246,0.08)]"
-                style={{ top: "-14px" }}
-                initial={{ opacity: 0, y: 6, scale: 0.92 }}
-                animate={
-                  shouldAnimate
-                    ? {
-                        opacity: 1,
-                        y: [6, 0, -0.6, 0, -0.4, 0],
-                        scale: 1,
-                      }
-                    : {}
-                }
-                transition={{
-                  opacity: { duration: 0.55, delay: popupBaseDelay, ease: "easeOut" },
-                  scale: { duration: 0.55, delay: popupBaseDelay, ease: [0.25, 0.1, 0.25, 1] },
-                  y: {
-                    duration: 4.5,
-                    delay: popupBaseDelay,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    times: [0, 0.12, 0.4, 0.55, 0.78, 1],
-                  },
-                }}
-              >
-                <TrendingUp className="h-3 w-3 text-blue-400/70" />
-                <span className="text-[10px] font-medium tracking-wide text-white/80 sm:text-[11px]">
-                  +Desempenho
-                </span>
-              </motion.div>
 
-              <motion.div
-                className="absolute flex items-center gap-1.5 rounded-md border border-blue-400/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(59,130,246,0.08)]"
-                style={{ top: "20px", right: "calc(100% + 3px)" }}
-                initial={{ opacity: 0, y: 6, scale: 0.92 }}
-                animate={
-                  shouldAnimate
-                    ? {
-                        opacity: 1,
-                        y: [6, 0, -0.5, 0, -0.7, 0],
-                        scale: 1,
-                      }
-                    : {}
-                }
-                transition={{
-                  opacity: { duration: 0.55, delay: popupBaseDelay + 0.15, ease: "easeOut" },
-                  scale: { duration: 0.55, delay: popupBaseDelay + 0.15, ease: [0.25, 0.1, 0.25, 1] },
-                  y: {
-                    duration: 5,
-                    delay: popupBaseDelay + 0.15,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    times: [0, 0.12, 0.4, 0.55, 0.78, 1],
-                  },
-                }}
-              >
-                <Crosshair className="h-3 w-3 text-blue-400/70" />
-                <span className="text-[10px] font-medium tracking-wide text-white/80 whitespace-nowrap sm:text-[11px]">
-                  Shark Mind
-                </span>
-              </motion.div>
-
-              <motion.div
-                className="absolute flex items-center gap-1.5 rounded-md border border-blue-400/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(59,130,246,0.08)]"
-                style={{ top: "20px", left: "calc(100% + 3px)" }}
-                initial={{ opacity: 0, y: 6, scale: 0.92 }}
-                animate={
-                  shouldAnimate
-                    ? {
-                        opacity: 1,
-                        y: [6, 0, -0.5, 0, -0.3, 0],
-                        scale: 1,
-                      }
-                    : {}
-                }
-                transition={{
-                  opacity: { duration: 0.55, delay: popupBaseDelay + 0.3, ease: "easeOut" },
-                  scale: { duration: 0.55, delay: popupBaseDelay + 0.3, ease: [0.25, 0.1, 0.25, 1] },
-                  y: {
-                    duration: 4.8,
-                    delay: popupBaseDelay + 0.3,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    times: [0, 0.12, 0.4, 0.55, 0.78, 1],
-                  },
-                }}
-              >
-                <DollarSign className="h-3 w-3 text-blue-400/70" />
-                <span className="text-[10px] font-medium tracking-wide text-white/80 whitespace-nowrap sm:text-[11px]">
-                  R$ Resultado
-                </span>
-              </motion.div>
-            </>
-          )}
         </motion.div>
       </div>
     </div>
