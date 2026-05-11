@@ -53,7 +53,7 @@ export function Header() {
             href="#cta"
             className="hidden rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition md:inline-flex"
           >
-            Avançar com a evolução
+            Confirmar evolução do contrato
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

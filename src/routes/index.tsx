@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { SharksLogo } from "@/components/SharksLogo";
+import { SharkFinDivider } from "@/components/SharkFinDivider";
 import type { LucideIcon } from "lucide-react";
 
 const SHARKS_LOGO_URL =
@@ -62,12 +63,19 @@ function Index() {
     <div className="min-h-screen text-foreground">
       <main>
         <Hero />
+        <SharkFinDivider large={true} />
         <Pilares />
+        <SharkFinDivider />
         <Metodo />
+        <SharkFinDivider />
         <FunilEcommerce />
+        <SharkFinDivider />
         <Investimento />
+        <SharkFinDivider />
         <Beneficios />
+        <SharkFinDivider />
         <Diferenciais />
+        <SharkFinDivider />
         <CTA />
       </main>
 
@@ -121,7 +129,7 @@ function Hero() {
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
-            href="#proposta"
+            href="#pilares"
             className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90"
           >
             Ver proposta completa
@@ -393,7 +401,7 @@ function CTA() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90"
           >
-            Avançar com a evolução
+            Confirmar evolução do contrato
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
